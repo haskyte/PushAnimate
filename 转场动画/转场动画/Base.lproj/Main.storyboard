@@ -82,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zB0-d7-P99"/>
                     <connections>
+                        <outlet property="imageView" destination="rNe-me-v0F" id="dnG-Dx-jAG"/>
                         <segue destination="upZ-xT-oLU" kind="modal" identifier="presentThird" id="xdo-yP-WAG"/>
                     </connections>
                 </viewController>

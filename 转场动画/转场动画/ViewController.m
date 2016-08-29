@@ -27,15 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-    
-    self.navigationController.delegate = self;
-}
-
-
-
 #pragma mark - 动画代理
 - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
@@ -48,6 +39,40 @@
     }else{
         return nil;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    self.imageView.hidden = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    // 关闭手势
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    
+    self.navigationController.delegate = self;
+    
+    self.imageView.hidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    self.imageView.hidden = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    
+    // 激活手势
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
 @end
