@@ -8,10 +8,6 @@
 
 #import "PresentAnimate.h"
 
-#define  Width   [UIScreen mainScreen].bounds.size.width
-#define  Height  [UIScreen mainScreen].bounds.size.height
-
-
 @implementation PresentAnimate
 
 - (void)animateTransitionEvent {

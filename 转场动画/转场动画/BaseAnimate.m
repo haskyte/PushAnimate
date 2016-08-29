@@ -21,18 +21,12 @@
 
 @implementation BaseAnimate
 
-#pragma mark - 初始化
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // 默认参数设置
-        [self deafultSet];
+        _transitionDuration = 0.5f;
     }
     return self;
-}
-
-- (void)deafultSet {
-    _transitionDuration = 0.5f;
 }
 
 #pragma mark - 动画代理
